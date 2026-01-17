@@ -80,20 +80,6 @@ export const defaultPricingPolicy: PricingPolicy = {
       description: "Automatic speech recognition (small)",
     },
 
-    // Text to Speech - $0.015
-    "facebook/mms-tts-eng": {
-      basePrice: "15000",
-      description: "Text to speech (English)",
-    },
-    "microsoft/speecht5_tts": {
-      basePrice: "15000",
-      description: "Text to speech (SpeechT5)",
-    },
-    "suno/bark": {
-      basePrice: "30000",
-      description: "Text to speech (Bark - expressive)",
-    },
-
     // Fill Mask - $0.00075
     "google-bert/bert-base-uncased": {
       basePrice: "750",

@@ -131,24 +131,6 @@ export function ResultDisplay({
     </div>
   );
 
-  const renderAudioResult = (data: { audio: string; contentType?: string }) => (
-    <div className="space-y-2">
-      <p className="text-sm text-gray-400">Generated Audio:</p>
-      <audio
-        controls
-        src={`data:${data.contentType || "audio/wav"};base64,${data.audio}`}
-        className="w-full"
-      />
-      <a
-        href={`data:${data.contentType || "audio/wav"};base64,${data.audio}`}
-        download="generated-audio.wav"
-        className="inline-block text-sm text-blue-400 hover:text-blue-300"
-      >
-        Download Audio
-      </a>
-    </div>
-  );
-
   const renderTranscriptionResult = (data: { text: string; chunks?: Array<{ text: string; timestamp: [number, number] }> }) => (
     <div className="space-y-4">
       <div>
@@ -268,9 +250,6 @@ export function ResultDisplay({
 
       case "automatic-speech-recognition":
         return renderTranscriptionResult(data as { text: string; chunks?: Array<{ text: string; timestamp: [number, number] }> });
-
-      case "text-to-speech":
-        return renderAudioResult(data as { audio: string; contentType?: string });
 
       case "fill-mask":
         return renderFillMaskResult(data as FillMaskItem[]);

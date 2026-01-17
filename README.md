@@ -14,7 +14,7 @@ A payment-enabled proxy for HuggingFace Inference API using X402 micropayments. 
 - **HuggingFace Compatible**: Same API as HuggingFace (`POST /models/{org}/{model}`)
 - **X402 Micropayments**: Pay-per-request with USDC on Base
 - **Per-Model Pricing**: Different prices for different models
-- **11 Supported Tasks**: Classification, detection, segmentation, embeddings, image generation, text-to-speech, speech-to-text, and more
+- **10 Supported Tasks**: Classification, detection, segmentation, embeddings, image generation, speech-to-text, and more
 - **Playground UI**: React frontend with wallet integration
 
 ## Supported Tasks
@@ -30,7 +30,6 @@ A payment-enabled proxy for HuggingFace Inference API using X402 micropayments. 
 | Text to Image | `black-forest-labs/FLUX.1-dev` | $0.03 |
 | Image to Image | `lllyasviel/control_v11p_sd15_canny` | $0.03 |
 | Speech to Text | `openai/whisper-large-v3` | $0.015 |
-| Text to Speech | `facebook/mms-tts-eng` | $0.015 |
 | Fill Mask | `google-bert/bert-base-uncased` | $0.00075 |
 
 Models not in the pricing list use the default price of **$0.01**.
