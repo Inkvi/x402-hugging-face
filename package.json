@@ -1,0 +1,30 @@
+{
+  "name": "x402-huggingface",
+  "version": "1.0.0",
+  "description": "X402 payment-enabled proxy for Hugging Face Inference API",
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "build": "tsc",
+    "deploy": "wrangler deploy --env mainnet",
+    "deploy:testnet": "wrangler deploy --env testnet",
+    "deploy:mainnet": "wrangler deploy --env mainnet",
+    "typecheck": "tsc --noEmit",
+    "test:api": "tsx scripts/test-api.ts"
+  },
+  "dependencies": {
+    "@coinbase/x402": "^2.1.0",
+    "@x402/core": "^2.2.0",
+    "@x402/evm": "^2.2.0",
+    "@x402/fetch": "^2.2.0",
+    "@x402/hono": "^2.2.0",
+    "hono": "^4.11.4",
+    "viem": "^2.44.2"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20260115.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.9.3",
+    "wrangler": "^4.59.1"
+  }
+}

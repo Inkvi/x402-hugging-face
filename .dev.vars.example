@@ -1,0 +1,11 @@
+# Development Environment Variables
+# Copy this file to .dev.vars and fill in your values
+# These are loaded by wrangler during local development
+
+# Hugging Face API Token
+# Get yours at: https://huggingface.co/settings/tokens
+HF_TOKEN=hf_your_token_here
+
+# Optional: Coinbase CDP credentials (for mainnet with CDP facilitator)
+# CDP_API_KEY_ID=your_cdp_api_key_id
+# CDP_API_KEY_SECRET=your_cdp_api_key_secret

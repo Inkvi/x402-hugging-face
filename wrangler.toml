@@ -1,0 +1,38 @@
+# X402 Hugging Face Inference Proxy - Cloudflare Workers Configuration
+
+name = "x402-huggingface"
+main = "src/index.ts"
+compatibility_date = "2024-12-01"
+compatibility_flags = ["nodejs_compat"]
+
+# Default environment variables (used in all environments)
+[vars]
+# Your payment receiver address
+PAYMENT_ADDRESS = "0x0000000000000000000000000000000000000000"
+# Default price in USDC atomic units (1 USDC = 1000000 units)
+# $0.0075 = 7500 units (50% markup on average HF inference cost)
+DEFAULT_PRICE = "7500"
+# Default to testnet for local development
+PAYMENT_NETWORK = "eip155:84532"
+
+# =============================================================================
+# TESTNET ENVIRONMENT (Base Sepolia)
+# =============================================================================
+[env.testnet]
+name = "x402-huggingface-testnet"
+vars = { PAYMENT_NETWORK = "eip155:84532" }
+
+# To set secrets for testnet:
+# wrangler secret put HF_TOKEN --env testnet
+
+# =============================================================================
+# MAINNET ENVIRONMENT (Base)
+# =============================================================================
+[env.mainnet]
+name = "x402-huggingface-mainnet"
+vars = { PAYMENT_NETWORK = "eip155:8453" }
+
+# To set secrets for mainnet:
+# wrangler secret put HF_TOKEN --env mainnet
+# wrangler secret put CDP_API_KEY_ID --env mainnet      # Optional: Coinbase CDP
+# wrangler secret put CDP_API_KEY_SECRET --env mainnet  # Optional: Coinbase CDP
