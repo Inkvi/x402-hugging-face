@@ -9,8 +9,8 @@
     "preview": "vite preview",
     "typecheck": "tsc --noEmit",
     "deploy": "npm run build && wrangler pages deploy dist --project-name x402-huggingface-playground",
-    "deploy:testnet": "cp .env.testnet .env.local && npm run build && wrangler pages deploy dist --project-name x402-huggingface-playground-testnet",
-    "deploy:mainnet": "cp .env.mainnet .env.local && npm run build && wrangler pages deploy dist --project-name x402-huggingface-playground-mainnet"
+    "deploy:testnet": "cp .env.testnet .env.build && VITE_NETWORK=base-sepolia VITE_API_URL=https://x402-huggingface-testnet.operations-4bf.workers.dev npm run build && wrangler pages deploy dist --project-name x402-huggingface-playground-testnet",
+    "deploy:mainnet": "cp .env.mainnet .env.build && VITE_NETWORK=base VITE_API_URL=https://x402-huggingface-mainnet.operations-4bf.workers.dev npm run build && wrangler pages deploy dist --project-name x402-huggingface-playground-mainnet"
   },
   "dependencies": {
     "@rainbow-me/rainbowkit": "^2.2.0",
