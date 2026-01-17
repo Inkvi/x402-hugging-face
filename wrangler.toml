@@ -4,11 +4,12 @@ name = "x402-huggingface"
 main = "src/index.ts"
 compatibility_date = "2024-12-01"
 compatibility_flags = ["nodejs_compat"]
+account_id = "4bfbcd216e0ba45b6384012c87f37584"
 
 # Default environment variables (used in all environments)
 [vars]
 # Your payment receiver address
-PAYMENT_ADDRESS = "0x0000000000000000000000000000000000000000"
+PAYMENT_ADDRESS = "0x2789e7E4acE2CEa71E2A490DA5B6144c534b194C"
 # Default price in USDC atomic units (1 USDC = 1000000 units)
 # $0.0075 = 7500 units (50% markup on average HF inference cost)
 DEFAULT_PRICE = "7500"
@@ -20,7 +21,11 @@ PAYMENT_NETWORK = "eip155:84532"
 # =============================================================================
 [env.testnet]
 name = "x402-huggingface-testnet"
-vars = { PAYMENT_NETWORK = "eip155:84532" }
+
+[env.testnet.vars]
+PAYMENT_NETWORK = "eip155:84532"
+PAYMENT_ADDRESS = "0x2789e7E4acE2CEa71E2A490DA5B6144c534b194C"
+DEFAULT_PRICE = "7500"
 
 # To set secrets for testnet:
 # wrangler secret put HF_TOKEN --env testnet
@@ -30,7 +35,11 @@ vars = { PAYMENT_NETWORK = "eip155:84532" }
 # =============================================================================
 [env.mainnet]
 name = "x402-huggingface-mainnet"
-vars = { PAYMENT_NETWORK = "eip155:8453" }
+
+[env.mainnet.vars]
+PAYMENT_NETWORK = "eip155:8453"
+PAYMENT_ADDRESS = "0x2789e7E4acE2CEa71E2A490DA5B6144c534b194C"
+DEFAULT_PRICE = "7500"
 
 # To set secrets for mainnet:
 # wrangler secret put HF_TOKEN --env mainnet
