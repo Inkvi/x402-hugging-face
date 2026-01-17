@@ -8,9 +8,9 @@
     "build": "tsc && vite build",
     "preview": "vite preview",
     "typecheck": "tsc --noEmit",
-    "deploy": "npm run build && wrangler pages deploy dist --project-name x402-proxy-playground",
-    "deploy:testnet": "npm run build && wrangler pages deploy dist --project-name x402-proxy-playground-testnet",
-    "deploy:mainnet": "npm run build && wrangler pages deploy dist --project-name x402-proxy-playground-mainnet"
+    "deploy": "npm run build && wrangler pages deploy dist --project-name x402-huggingface-playground",
+    "deploy:testnet": "cp .env.testnet .env.local && npm run build && wrangler pages deploy dist --project-name x402-huggingface-playground-testnet",
+    "deploy:mainnet": "cp .env.mainnet .env.local && npm run build && wrangler pages deploy dist --project-name x402-huggingface-playground-mainnet"
   },
   "dependencies": {
     "@rainbow-me/rainbowkit": "^2.2.0",
