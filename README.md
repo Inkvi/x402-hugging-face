@@ -2,6 +2,13 @@
 
 A payment-enabled proxy for HuggingFace Inference API using X402 micropayments. Pay per request with USDC on Base blockchain.
 
+## Live Deployments
+
+| Environment | API | Playground |
+|-------------|-----|------------|
+| **Testnet** (Base Sepolia) | [x402-huggingface-testnet.operations-4bf.workers.dev](https://x402-huggingface-testnet.operations-4bf.workers.dev) | [x402-huggingface-playground-testnet.pages.dev](https://x402-huggingface-playground-testnet.pages.dev) |
+| **Mainnet** (Base) | [x402-huggingface-mainnet.operations-4bf.workers.dev](https://x402-huggingface-mainnet.operations-4bf.workers.dev) | [x402-huggingface-playground-mainnet.pages.dev](https://x402-huggingface-playground-mainnet.pages.dev) |
+
 ## Features
 
 - **HuggingFace Compatible**: Same API as HuggingFace (`POST /models/{org}/{model}`)
@@ -144,7 +151,7 @@ npm run dev
 ```
 VITE_API_URL=http://localhost:8787
 VITE_NETWORK=base-sepolia
-VITE_WALLETCONNECT_PROJECT_ID=your_project_id
+VITE_WALLETCONNECT_PROJECT_ID=  # Optional - works without it for browser extension wallets
 ```
 
 ## Project Structure
