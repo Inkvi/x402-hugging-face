@@ -82,12 +82,16 @@ function App() {
         }
       }
 
-      // Handle binary response (images)
+      // Handle binary response (images and audio)
       const contentType = response.headers.get("Content-Type") || "";
       if (contentType.startsWith("image/")) {
         const blob = await response.blob();
         const base64 = await blobToBase64(blob);
         setResult({ image: base64, contentType });
+      } else if (contentType.startsWith("audio/")) {
+        const blob = await response.blob();
+        const base64 = await blobToBase64(blob);
+        setResult({ audio: base64, contentType });
       } else {
         const responseData = await response.json();
         setResult(responseData);

@@ -12,6 +12,7 @@ export type TaskType =
   | "text-to-image"
   | "image-to-image"
   | "automatic-speech-recognition"
+  | "text-to-speech"
   | "fill-mask";
 
 export type InputType = "text" | "image" | "audio" | "prompt";
@@ -87,6 +88,13 @@ export const TASKS: Record<TaskType, TaskConfig> = {
     description: "Transcribe audio to text",
     placeholder: "Upload audio to transcribe",
     defaultModel: "openai/whisper-large-v3",
+  },
+  "text-to-speech": {
+    name: "Text to Speech",
+    inputType: "text",
+    description: "Generate speech from text",
+    placeholder: "Enter text to convert to speech...",
+    defaultModel: "facebook/mms-tts-eng",
   },
   "fill-mask": {
     name: "Fill Mask",
